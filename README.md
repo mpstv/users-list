@@ -1,6 +1,6 @@
 # users-list
 
-A simple application to edit the list of users. For data storage is used localstorage. Using Vue, VueRouter and Vuex.
+A simple application to edit the list of users. For data storage is used localstorage. Using Vue, Vuetify and Vuex.
 
 ## Project setup
 
@@ -25,7 +25,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
