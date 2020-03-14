@@ -1,6 +1,6 @@
 # users-list
 
-A simple application to edit the list of users. For data storage is used localstorage. Using Vue, Vuetify and Vuex.
+A simple application to edit the list of users. For data storage is used localstorage. Using Vue, Vuex and Vuetify.
 
 ## Project setup
 
