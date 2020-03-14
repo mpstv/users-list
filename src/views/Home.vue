@@ -1,16 +1,14 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Users list app" />
-  </div>
+  <UsersList />
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import UsersList from "@/components/UsersList.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    UsersList
   }
 };
 </script>
