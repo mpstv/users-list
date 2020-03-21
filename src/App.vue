@@ -3,6 +3,8 @@
     <v-app>
       <v-app-bar app color="indigo" dark>
         <v-toolbar-title>Users list</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <CreateUserButton />
       </v-app-bar>
       <v-content>
         <v-container fluid>
@@ -16,3 +18,14 @@
     </v-app>
   </div>
 </template>
+
+<script>
+import CreateUserButton from "@/components/CreateUserButton.vue";
+
+export default {
+  name: "App",
+  components: {
+    CreateUserButton
+  }
+};
+</script>

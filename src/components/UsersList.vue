@@ -1,20 +1,24 @@
 <template>
   <v-data-table :headers="headers" :items="users" :items-per-page="10"
     ><template v-slot:item.actions="{ item }">
-      <v-icon small class="mr-2" @click="editItem(item)">
+      <v-icon small class="mr-2" @click="selectUser(item)">
         mdi-pencil
       </v-icon>
-      <v-icon small @click="deleteItem(item)">
+      <v-icon small @click="deleteUser(item.id)">
         mdi-delete
       </v-icon>
     </template>
     <template v-slot:no-data>
-      <v-btn color="primary" @click="initialize">No users</v-btn>
+      Sorry, nothing to display here :(
     </template></v-data-table
   >
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+import { GETTERS } from "../store/getters";
+import { MUTATIONS } from "../store/mutations";
+
 export default {
   name: "UsersList",
   data() {
@@ -29,49 +33,14 @@ export default {
         { text: "Surname", value: "surname" },
         { text: "Email", value: "email" },
         { text: "Actions", value: "actions", sortable: false }
-      ],
-      users: [
-        {
-          login: "fuogurt",
-          name: "Frozen",
-          surname: "Yogurt",
-          email: "frozenyogurt@gmail.com"
-        },
-        {
-          login: "icsandwich",
-          name: "Ice cream",
-          surname: "Sandwich",
-          email: "icecreamsandwich@gmail.com"
-        },
-        {
-          login: "eclair",
-          name: "Eclair",
-          surname: "Eclair",
-          email: "eclair@gmail.com"
-        },
-        {
-          login: "jbean",
-          name: "Jelly",
-          surname: "bean",
-          email: "jelly_bean@gmail.com"
-        },
-        {
-          login: "kit__kat",
-          name: "Kit",
-          surname: "Kat",
-          email: "KitKat@gmail.com"
-        }
       ]
     };
   },
+  computed: {
+    ...mapGetters({ ...GETTERS })
+  },
   methods: {
-    editItem(item) {
-      console.log(item);
-    },
-
-    deleteItem(item) {
-      console.log(item);
-    }
+    ...mapMutations({ ...MUTATIONS })
   }
 };
 </script>
